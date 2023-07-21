@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    </head>
+    <body>
+        <div class="container mt-4">
+            <button class="btn btn-primary mr-3" onclick="listchange()">Add List</button>
+            <button class="btn btn-danger" onclick="alllist()">Remove all list</button>
+            <ul id="unorderedlist" class="list-group mt-4"></ul>
+        </div>
+        <script>
+            function alllist(){
+                let ul=document.getElementById("unorderedlist");
+                ul.remove();
+            }
+            function listchange(){
+                let newlist=document.createElement("li");
+                let button=document.createElement("button");
+                let count=document.getElementsByTagName("li").length+1;
+                let ul=document.getElementById("unorderedlist");
+                newlist.textContent="list "+count;
+                newlist.style.color="red";
+                newlist.style.fontSize="30px"
+                button.textContent="remove";
+                button.style.border="7px solid black";
+                button.className = "btn btn-dark ml-3";
+                button.onclick=function(){
+                    button.parentElement.remove();
+                }
+                newlist.appendChild(button);
+                ul.appendChild(newlist);
+                
+    
+
+                }
+
+        </script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    </body>
+</html>
+
+
+
